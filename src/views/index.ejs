@@ -108,15 +108,21 @@
                         <%= dataUser[i].email %>
                     </td>
                     <td><a href="/detail/user/<%= dataUser[i].id %>">Detail</a>
-                        <button type="button">Edit</button>
-                        <button type="button">Delete</button>
+
+                        <form action="/getEdit-user/<%= dataUser[i].id %>" method="GET">
+                            <button type="submit">Edit</button>
+                        </form>
+                        <form action="/delete-user" method="POST">
+                            <input type="text" value='<%= dataUser[i].id %>' hidden name="userId" />
+                            <button type="submit">Delete</button>
+                        </form>
                     </td>
                 </tr>
                 <% } %>
         </tbody>
     </table>
     <div class="create-user-container">
-        <form action="/create/newUser" , method="POST">
+        <form action="/create/newUser"  method="POST">
             <div><b>Create a new users</b></div>
             <div>
                 <label>FirstName</label>

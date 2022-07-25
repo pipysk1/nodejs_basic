@@ -1,19 +1,22 @@
-import express from 'express';
-import configViewEngine from './configs/viewEngine';
-import initWebRoute from './route/web'
+import express from "express";
+import configViewEngine from "./configs/viewEngine";
+import initWebRoute from "./route/web";
+import initAPIRoute from "./route/api";
 // import connect from './configs/connectDB'
-require('dotenv').config();
+require("dotenv").config();
 const app = express();
 
 const port = process.env.PORT || 8080;
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 //setup view engine
-configViewEngine(app)
+configViewEngine(app);
 
 //setup route web
-initWebRoute(app)
+initWebRoute(app);
+
+initAPIRoute(app);
 
 app.listen(port, () => {
-    console.log(`Run server Nodejs localhost:${port}`);
-})
+  console.log(`Run server Nodejs localhost:${port}`);
+});
