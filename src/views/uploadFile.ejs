@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        .create-user-container {
+            padding: 15px;
+            text-align: center;
+            margin: 12px;
+        }
+
+        .create-user-container label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .create-user-container button {
+            cursor: pointer;
+            margin-top: 15px;
+        }
+    </style>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background-color: coral;
+        }
+
+
+        .upload-file-container {
+            padding: 15px;
+        }
+
+        .upload-file-container label {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a class="active" href="/upload">Upload</a>
+    </div>
+
+    <div class="upload-file-container">
+        <form enctype="multipart/form-data" method="POST" action="/upload-profile-pic">
+            <div>
+                <label>Chọn avatar:</label>
+                <input type="file" name="profile_pic" />
+            </div>
+
+
+            <div>
+                <button class="btn-save" type="submit">Save files</button>
+            </div>
+        </form>
+        <form method="POST" action="/upload-multiple-images" enctype="multipart/form-data">
+            <div>
+                <label>Select multiple images:</label>
+                <input type="file" name="multiple_images" multiple />
+            </div>
+            <div>
+                <input type="submit" name="btn_upload_multiple_images" value="Upload" />
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
