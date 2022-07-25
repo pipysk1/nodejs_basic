@@ -8,6 +8,7 @@ const initWebRoute = (app) => {
     route.get('/', homeController.getHomePage);
 
     route.get('/detail/user/:userId', homeController.getDetailPage)
+    route.post('/create/newUser', homeController.createNewUser)
     route.get('/about', (req, res) => {
         res.send('index.ejs')
     })

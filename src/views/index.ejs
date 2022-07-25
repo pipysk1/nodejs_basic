@@ -36,6 +36,22 @@
             background-color: #04AA6D;
             color: white;
         }
+
+        .create-user-container {
+            padding: 15px;
+            text-align: center;
+            margin: 12px;
+        }
+
+        .create-user-container label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .create-user-container button {
+            cursor: pointer;
+            margin-top: 15px;
+        }
     </style>
     <style>
         table {
@@ -99,6 +115,29 @@
                 <% } %>
         </tbody>
     </table>
+    <div class="create-user-container">
+        <form action="/create/newUser" , method="POST">
+            <div><b>Create a new users</b></div>
+            <div>
+                <label>FirstName</label>
+                <input type="text" name="firstName" />
+            </div>
+            <div>
+                <label>LastName</label>
+                <input type="text" name="lastName" />
+            </div>
+            <div>
+                <label>Email</label>
+                <input type="email" name="email" />
+            </div>
+            <div>
+                <label>Adress</label>
+                <input type="text" name="adress" />
+            </div>
+            <div><button class="btn-submit" type="submit">Submit</button></div>
+        </form>
+    </div>
+
 
 </body>
 
